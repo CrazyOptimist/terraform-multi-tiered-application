@@ -49,7 +49,7 @@ resource "aws_autoscaling_group" "webserver" {
 module "alb" {
   source = "terraform-aws-modules/alb/aws"
   version = "~> 5.0"
-  load_valancer_type = "application"
+  load_balancer_type = "application"
   vpc_id = var.vpc.vpc_id
   subnets = var.vpc.public_subnets
   security_groups = [var.sg.lb]
